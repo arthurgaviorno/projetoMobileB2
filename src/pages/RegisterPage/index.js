@@ -1,0 +1,26 @@
+import { TextInput, TouchableOpacity, View, Image, Text } from "react-native";
+
+import { Link } from "@react-navigation/native";
+
+import styles from "./styles";
+
+export default function RegisterPage() {
+    return (
+        <View style={styles.container}>
+            <Image source={require('../../../assets/img/logo.png')} style={styles.imgLogo} />
+
+            <TextInput placeholder="Email" style={styles.input} />
+            <TextInput placeholder="Username" style={styles.input} />
+            <TextInput placeholder="Password" style={styles.input} />
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
+
+            <View style={styles.viewLinks}>
+                <Link to={{ screen: "LoginPage" }}>Fazer login</Link>
+                <Link to={{ screen: "SenhaPage" }}>Esqueceu sua senha?</Link>
+            </View>
+        </View>
+    )
+}
